@@ -27,7 +27,7 @@ Simple Facebook Plugin enables Facebook Page owners to attract and gain Likes fr
 **Customizing**
 
 1. Click triangle near "Facebook Widget" header.
-1. Choose colorshame, size and other options you like.
+1. Choose colorscheme, size and other options you like.
 1. Enter your Facebook Page URL.
 
 == Screenshots ==
