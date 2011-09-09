@@ -2,12 +2,12 @@
 
 Contributors: fornyhucker
 Donate link: http://fornyhucker.blogspot.com/
-Tags: archive, Post, social, social media, facebook, facebook like box, widget, customize, like box
+Tags: archive, Post, social, social media, multilanguage, facebook, facebook like box, widget, customize, like box, locales
 Requires at least: 2.8
 Tested up to: 3.2
 Stable tag: trunk
 
-Create sidebar widget that display Facebook Like Box
+Create sidebar widget that display Facebook Like Box at 20+ lenguages
 
 == Description ==
 
@@ -16,6 +16,39 @@ Simple Facebook Plugin enables Facebook Page owners to attract and gain Likes fr
 * See how many users already like this Page, and which of their friends like it too
 * Read recent posts from the Page
 * Like the Page with one click, without needing to visit the Page
+
+**Supported lenguages**
+
+* Czech
+* Danish
+* Dutch
+* English (US)
+* English (UK)
+* Estonian
+* French
+* German
+* Italian
+* Japanese
+* Korean
+* Latvian
+* Lithuanian
+* Polish
+* Portuguese
+* Romanian
+* Russian
+* Spanish
+* Spanish (Spain)
+* Spanish (Chile)
+* Spanish (Colombia)
+* Spanish (Mexico)
+* Spanish (Venezuela)
+* Swedish
+* Simplified Chinese
+* Traditional Chinese (Taiwan)
+* Thai
+* Turkish
+* Ukrainian
+* Klingon
 
 == Installation ==
 **Installation**
@@ -34,3 +67,8 @@ Simple Facebook Plugin enables Facebook Page owners to attract and gain Likes fr
 
 1. Example customize widget.
 2. Default widget styling.
+
+== Changelog ==
+
+= 1.1 =
+Add more than 20 Facebook Locales. Now you can choose your language from the list.
