@@ -11,21 +11,24 @@ Create sidebar widget that display Facebook Like Box
 
 == Description ==
 
-Simple Facebook Plugin enables Facebook Page owners to attract and gain Likes from their own wordpress blogs. The Like Box enables users to:
-- See how many users already like this Page, and which of their friends like it too
-- Read recent posts from the Page
-- Like the Page with one click, without needing to visit the Page
+Simple Facebook Plugin enables Facebook Page owners to attract and gain Likes from their own wordpress blogs. The **Like Box** enables users to:
+
+* See how many users already like this Page, and which of their friends like it too
+* Read recent posts from the Page
+* Like the Page with one click, without needing to visit the Page
 
 == Installation ==
-Install
-1. Upload simple-facebook-plugin directory to your /wp-content/plugins directory
-2. Activate plugin in WordPress admin
-3. In WordPress admin, go to "Widgets". Drag and Drop "Facebook Widget" into your sidebar.
+**Installation**
 
-Customize
+1. Upload simple-facebook-plugin directory to your /wp-content/plugins directory
+1. Activate plugin in WordPress admin
+1. In WordPress admin, go to "Widgets". Drag and Drop "Facebook Widget" into your sidebar.
+
+**Customizing**
+
 1. Click triangle near "Facebook Widget" header.
-2. Choose colorshame, size and other options you like.
-3. Enter your Facebook Page URL.
+1. Choose colorshame, size and other options you like.
+1. Enter your Facebook Page URL.
 
 == Screenshots ==
 
