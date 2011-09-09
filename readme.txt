@@ -17,12 +17,12 @@ Simple Facebook Plugin enables Facebook Page owners to attract and gain Likes fr
 - Like the Page with one click, without needing to visit the Page
 
 == Installation ==
-<b>Install<b>
+Install
 1. Upload simple-facebook-plugin directory to your /wp-content/plugins directory
 2. Activate plugin in WordPress admin
 3. In WordPress admin, go to "Widgets". Drag and Drop "Facebook Widget" into your sidebar.
 
-<b>Customize<b>
+Customize
 1. Click triangle near "Facebook Widget" header.
 2. Choose colorshame, size and other options you like.
 3. Enter your Facebook Page URL.
