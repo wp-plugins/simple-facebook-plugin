@@ -7,7 +7,7 @@ Requires at least: 2.8
 Tested up to: 3.2
 Stable tag: trunk
 
-Create sidebar widget that display Facebook Like Box at 20+ lenguages
+Create sidebar widget that display Facebook Like Box at 20+ languages
 
 == Description ==
 
@@ -17,7 +17,7 @@ Simple Facebook Plugin enables Facebook Page owners to attract and gain Likes fr
 * Read recent posts from the Page
 * Like the Page with one click, without needing to visit the Page
 
-**Supported lenguages**
+**Supported languages**
 
 * Czech
 * Danish
@@ -53,7 +53,7 @@ Simple Facebook Plugin enables Facebook Page owners to attract and gain Likes fr
 == Installation ==
 **Installation**
 
-1. Upload simple-facebook-plugin directory to your /wp-content/plugins directory
+1. Upload simple-facebook-plugin directory to your '/wp-content/plugins' directory
 1. Activate plugin in WordPress admin
 1. In WordPress admin, go to "Widgets". Drag and Drop "Facebook Widget" into your sidebar.
 
