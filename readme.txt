@@ -1,7 +1,7 @@
 === Simple Facebook Plugin ===
 
 Contributors: fornyhucker
-Donate link: http://fornyhucker.blogspot.com/
+Donate link: http://topdevs.net
 Tags: archive, Post, social, social media, multilingual, facebook, facebook like box, widget, customize, like box, locales
 Requires at least: 2.8
 Tested up to: 3.2
@@ -57,7 +57,7 @@ Simple Facebook Plugin enables Facebook Page owners to attract and gain Likes fr
 1. Activate plugin in WordPress admin
 1. In WordPress admin, go to "Widgets". Drag and Drop "Facebook Widget" into your sidebar.
 
-**Customizing**
+**Customization**
 
 1. Click triangle near "Facebook Widget" header.
 1. Choose colorscheme, size and other options you like.
@@ -65,8 +65,8 @@ Simple Facebook Plugin enables Facebook Page owners to attract and gain Likes fr
 
 == Screenshots ==
 
-1. Example customize widget.
-2. Default widget styling.
+1. Widget in the dashboard.
+2. Widget on your site.
 
 == Changelog ==
 
