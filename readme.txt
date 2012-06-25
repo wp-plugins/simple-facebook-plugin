@@ -2,7 +2,7 @@
 
 Contributors: fornyhucker
 Donate link: http://fornyhucker.blogspot.com/
-Tags: archive, Post, social, social media, multilanguage, facebook, facebook like box, widget, customize, like box, locales
+Tags: archive, Post, social, social media, multilingual, facebook, facebook like box, widget, customize, like box, locales
 Requires at least: 2.8
 Tested up to: 3.2
 Stable tag: trunk
@@ -11,7 +11,7 @@ Create sidebar widget that display Facebook Like Box at 20+ languages
 
 == Description ==
 
-Simple Facebook Plugin enables Facebook Page owners to attract and gain Likes from their own wordpress blogs. The **Like Box** enables users to:
+Simple Facebook Plugin enables Facebook Page owners to attract and gain Likes from their own WordPress blogs. The **Like Box** enables users to:
 
 * See how many users already like this Page, and which of their friends like it too
 * Read recent posts from the Page

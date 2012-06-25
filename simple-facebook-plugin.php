@@ -1,11 +1,11 @@
 <?php
 /*
 Plugin Name: Simple Facebook Plugin
-Plugin URI: http://fornyhucker.blogspot.com/
+Plugin URI: http://plugins.topdevs.net/simple-facebook-plugin
 Description: Create sidebar widget that display Facebook Like Box.
-Version: 1.1
+Version: 1.1.1
 Author: Ilya Kopturov
-Author URI: http://fornyhucker.blogspot.com/
+Author URI: http://topdevs.net
 License: GPL
 */
 
@@ -118,7 +118,7 @@ class FacebookWidget extends WP_Widget {
 		</table>
 		<br/>
 		<p>
-				<label for="<?php echo $this->get_field_id('local'); ?>"><?php _e('Lenguage'); ?></label> 
+				<label for="<?php echo $this->get_field_id('local'); ?>"><?php _e('Language'); ?></label> 
 				<select name="<?php echo $this->get_field_name('local'); ?>">
 					<option <?php selected(( $local == 'cs_CZ') ? 1 : 0);?> value="cs_CZ" >Czech</option>
 					<option <?php selected(( $local == 'da_DK') ? 1 : 0);?> value="da_DK" >Danish</option>
