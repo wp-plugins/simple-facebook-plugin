@@ -1,4 +1,4 @@
-=== Simple Facebook Plugin ===
+﻿=== Simple Facebook Plugin ===
 
 Contributors: fornyhucker
 Donate link: http://topdevs.net/?donate=true
@@ -71,14 +71,16 @@ Please visit [Plugin Home Page](http://plugins.topdevs.net/simple-facebook-plugi
 
 Use `[sfp-like-box]` shortcode inside your post or page. This shortcode support all default parametrs:
 
-* url
-* width
-* height
-* colorscheme
-* faces
-* stream
-* header
-* local
+
+* url - any Fan Page URL (not your personal page!)
+* width - any number (e.g 250)
+* height - any number (e.g 300)
+* colorscheme - *light* or *dark*
+* faces – *true* or *false*
+* stream - *true* or *false*
+* header - *true* or *false*
+* local - valid language code (e.g. *en_US* or *es_MX*) see [.csv file](http://developers.facebook.com/attachment/locales_final.csv "Facebook locales list") with all Facebook locales
+
 
 If you want Like Box *220 pixels width*, *dark color scheme* and *showing stream* you need to use it next way:
 
