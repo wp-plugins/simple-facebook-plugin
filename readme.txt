@@ -14,7 +14,7 @@ Allows you to integrate Facebook Like Box into your WordPress Site.
 
 = Whats new in 1.2.1? =
 
-Now you can hide Like Box border, just uncheck 'Show Border' option on widget setting and vuala!
+Now you can hide Like Box border, just uncheck 'Show Border' option on widget setting and vuala! (If you are using shortcode or template tag set ‘border‘ parameter to ‘false‘)
 
 = Description =
 
