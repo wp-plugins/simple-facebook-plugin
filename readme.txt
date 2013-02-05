@@ -12,6 +12,14 @@ Allows you to integrate Facebook Like Box into your WordPress Site.
 
 == Description ==
 
+=Whats new in 1.2.1?=
+
+Now you can hide Like Box border, just uncheck 'Show Border' option on widget setting and vuala!
+
+=Description=
+
+If you are using shortcode or template tag set 'border' parameter to 'false'
+
 Simple Facebook Plugin enables Facebook Page owners to attract and gain Likes from their own WordPress blogs. The **Like Box** enables users to:
 
 * See how many users already like this Page, and which of their friends like it too
