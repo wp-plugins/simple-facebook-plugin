@@ -3,7 +3,7 @@
 Plugin Name: Simple Facebook Plugin
 Plugin URI: http://plugins.topdevs.net/simple-facebook-plugin
 Description: Allows you to integrate Facebook Like Box into your WordPress Site.
-Version: 1.2
+Version: 1.2.1
 Author: Ilya K.
 Author URI: http://plugins.topdevs.net
 License: GPLv2 or later
@@ -56,7 +56,7 @@ if ( !class_exists( 'SFPlugin' ) ) {
 		*/
 		protected function addActions() {
 			
-			add_action( 'widgets_init', array( $this, 'addWidgets' ) );
+			add_action('widgets_init', array( $this, 'addWidgets') );
 			
 		}
 		
@@ -65,7 +65,7 @@ if ( !class_exists( 'SFPlugin' ) ) {
 		*/
 		public function addWidgets() {
 				
-			register_widget("SFPLikeBoxWidget");
+			register_widget('SFPLikeBoxWidget');
 
 		}
 		
@@ -74,7 +74,7 @@ if ( !class_exists( 'SFPlugin' ) ) {
 		*/
 		public function addShortcodes() {
 		
-			add_shortcode( 'sfp-like-box', 'sfp_like_box_shortcode' );
+			add_shortcode('sfp-like-box', 'sfp_like_box_shortcode');
 			
 		}
 		

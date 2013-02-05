@@ -4,7 +4,7 @@ Contributors: fornyhucker
 Donate link: http://topdevs.net/?donate=true
 Tags: social, social media, facebook, facebook like box, like box, widget, shortcode, template tag
 Requires at least: 2.8
-Tested up to: 3.4
+Tested up to: 3.5.1
 Stable tag: trunk
 License: GPLv2 or later
 
@@ -35,6 +35,7 @@ Please visit [Plugin Home Page](http://plugins.topdevs.net/simple-facebook-plugi
 * Korean
 * Latvian
 * Lithuanian
+* Norwegian (bokmal)
 * Polish
 * Portuguese
 * Romanian
@@ -79,7 +80,7 @@ Use `[sfp-like-box]` shortcode inside your post or page. This shortcode support 
 * faces – *true* or *false*
 * stream - *true* or *false*
 * header - *true* or *false*
-* local - valid language code (e.g. *en_US* or *es_MX*) see [.csv file](http://developers.facebook.com/attachment/locales_final.csv "Facebook locales list") with all Facebook locales
+* local - valid language code (e.g. *en_US* or *es_MX*) see [.xml file](http://www.facebook.com/translations/FacebookLocales.xml "Facebook locales XML") with all Facebook locales
 
 
 If you want Like Box *220 pixels width*, *dark color scheme* and *showing stream* you need to use it next way:
@@ -114,6 +115,10 @@ Like Box is only for Fan Pages and **not** for your personal page.
 3. Shortcode inside your post.
 
 == Changelog ==
+
+= 1.2.1 =
+* Added option to show Like Box with no border;
+* Added Norwegian(bokmal) locale to widget;
 
 = 1.2 =
 Plugin structure reorganized. Shortcode and template tag functionality added.

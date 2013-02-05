@@ -18,7 +18,7 @@
 class SFPLikeBoxWidget extends WP_Widget {
 	
 	/**
-	 * Register widget with WordPress.
+	 * Register widget with WordPress
 	 */
 	function SFPLikeBoxWidget() {
 		$widget_ops = array( 'description' => 'Display Facebook Like Box' );
@@ -26,7 +26,7 @@ class SFPLikeBoxWidget extends WP_Widget {
 	}
 
 	/**
-	 * Front-end display of widget.
+	 * Front-end
 	 */
 	function widget( $args, $instance ) {
 		
@@ -49,7 +49,7 @@ class SFPLikeBoxWidget extends WP_Widget {
 	}
 
 	/**
-	 * Sanitize widget form values as they are saved.
+	 * Sanitize widget form values as they are saved
 	 */
 	function update( $new_instance, $old_instance ) {
 		
@@ -64,12 +64,13 @@ class SFPLikeBoxWidget extends WP_Widget {
 		$instance['faces']			= isset( $new_instance['faces'] );
 		$instance['stream']			= isset( $new_instance['stream'] );
 		$instance['header']			= isset( $new_instance['header'] );
+		$instance['border']			= isset( $new_instance['border'] );
 		
 		return $instance;
 	}
 
 	/**
-	 * Back-end widget form.
+	 * Back-end form
 	 */
 	function form( $instance ) {
 		
@@ -83,6 +84,7 @@ class SFPLikeBoxWidget extends WP_Widget {
 			'faces'			=> true,
 			'stream'		=> false,
 			'header'		=> true,
+			'border'		=> true,
 			'local'			=> 'en_US'
 		), $instance ) ); ?>
 			
@@ -98,12 +100,12 @@ class SFPLikeBoxWidget extends WP_Widget {
 			<tr><td>
 				<label for="<?php echo $this->get_field_id('width'); ?>"><?php _e('Like Box width:'); ?></label> 
 				</td><td>
-				<input class="widefat" size="8" id="<?php echo $this->get_field_id('width'); ?>" name="<?php echo $this->get_field_name('width'); ?>" type="text" value="<?php echo $width; ?>" />
+				<input size="6" id="<?php echo $this->get_field_id('width'); ?>" name="<?php echo $this->get_field_name('width'); ?>" type="text" value="<?php echo $width; ?>" />px
 			</td></tr>
 			<tr><td>
 				<label for="<?php echo $this->get_field_id('height'); ?>"><?php _e('Like Box height:'); ?></label> 
 				</td><td>
-				<input class="widefat" size="8" id="<?php echo $this->get_field_id('height'); ?>" name="<?php echo $this->get_field_name('height'); ?>" type="text" value="<?php echo $height; ?>" />
+				<input size="6" id="<?php echo $this->get_field_id('height'); ?>" name="<?php echo $this->get_field_name('height'); ?>" type="text" value="<?php echo $height; ?>" />px
 			</td></tr>
 			<tr><td>
 				&nbsp;
@@ -132,6 +134,11 @@ class SFPLikeBoxWidget extends WP_Widget {
 				</td><td>
 				<input id="<?php echo $this->get_field_id('header'); ?>" type="checkbox" name="<?php echo $this->get_field_name('header'); ?>" <?php checked(isset($header) ? $header : 0); ?>/> 
 			</td></tr>
+			<tr><td>
+				<label for="<?php echo $this->get_field_id('border'); ?>"><?php _e('Show Border'); ?></label> 
+				</td><td>
+				<input id="<?php echo $this->get_field_id('border'); ?>" type="checkbox" name="<?php echo $this->get_field_name('border'); ?>" <?php checked(isset($border) ? $border : 0); ?>/> 
+			</td></tr>
 		</table>
 		<br/>
 		<p>
@@ -150,6 +157,7 @@ class SFPLikeBoxWidget extends WP_Widget {
 				<option <?php selected(( $local == 'ko_KR') ? 1 : 0);?> value="ko_KR" >Korean</option>
 				<option <?php selected(( $local == 'lv_LV') ? 1 : 0);?> value="lv_LV" >Latvian</option>
 				<option <?php selected(( $local == 'lt_LT') ? 1 : 0);?> value="lt_LT" >Lithuanian</option>
+				<option <?php selected(( $local == 'nb_NO') ? 1 : 0);?> value="nb_NO" >Norwegian (bokmal)</option>
 				<option <?php selected(( $local == 'pl_PL') ? 1 : 0);?> value="pl_PL" >Polish</option>
 				<option <?php selected(( $local == 'pt_PT') ? 1 : 0);?> value="pt_PT" >Portuguese</option>
 				<option <?php selected(( $local == 'ro_RO') ? 1 : 0);?> value="ro_RO" >Romanian</option>
@@ -173,60 +181,42 @@ class SFPLikeBoxWidget extends WP_Widget {
 	
 } // class SFPLikeBoxWidget
 
-
 /**
- * Add Like Box shortcode
- * 
- * @example [sfp-like-box width="100" faces="false"]
+ * Add Like Box 'Shortcode'
+ *
  * @since SF Plugin 1.2
  * @author Ilya K.
  */
 
-function sfp_like_box_shortcode ( $atts ) {
-	
-	extract( shortcode_atts( array(
-		// default options
-		'url'			=> 'http://www.facebook.com/wordpress',
-		'width'			=> '292',
-		'height'		=> '',
-		'colorscheme'	=> 'light',
-		'faces'			=> 'true',
-		'stream'		=> 'false',
-		'header'		=> 'true',
-		'local'			=> 'en_US'
-	), $atts ) );
-	
-	// Facebook Like Box Code
-	$like_box_code = "<!-- SFP Plugin by Ilya K. -->
-	<script>
-		(function(d){
-			var js, id = 'facebook-jssdk';
-			if (d.getElementById(id)) {return;}
-			js = d.createElement('script');
-			js.id = id;
-			js.async = true;
-			js.src = \"//connect.facebook.net/$local/all.js#xfbml=1\";
-			d.getElementsByTagName('head')[0].appendChild(js);
-		}(document));
-	</script>
-	<!-- HTML5 Like Box Code START -->
-	<div class=\"fb-like-box\"
-		data-href=\"$url\" 
-		data-width=\"$width; ?>\"
-		data-height=\"$height\"
-		data-colorscheme=\"$colorscheme\"
-		data-show-faces=\"$faces\" 
-		data-stream=\"$stream\" 
-		data-header=\"$header\">
-	</div>
-	<!-- HTML5 Like Box Code END -->";
-	
-	return $like_box_code;
+function sfp_like_box_shortcode ( $args = array() ) {
+
+	global $sfplugin;
+
+	extract( array_merge( array(
+			// default options
+			'url'			=> 'http://www.facebook.com/wordpress',
+			'width'			=> '292',
+			'height'		=> '',
+			'colorscheme' 	=> 'light',
+			'faces'			=> true,
+			'stream'		=> false,
+			'header'		=> true,
+			'border'		=> true,
+			'local'			=> 'en_US'
+	), $args ) );
+
+	ob_start();
+
+	// include Like Box view
+	include( $sfplugin->pluginPath . 'views/view-like-box.php' );
+
+	return ob_get_clean();
 }
 
+
 /**
-* Add Like Box Template Tag
-*
+* Add Like Box 'Template Tag'
+* 
 * @since SF Plugin 1.2
 * @author Ilya K.
 */
@@ -244,12 +234,12 @@ function sfp_like_box ( $args = array() ) {
 		'faces'			=> true,
 		'stream'		=> false,
 		'header'		=> true,
+		'border'		=> true,
 		'local'			=> 'en_US'
 	), $args ) );
 	
 	// include Like Box view
 	include( $sfplugin->pluginPath . 'views/view-like-box.php' );
-	
 }
 
 ?>
