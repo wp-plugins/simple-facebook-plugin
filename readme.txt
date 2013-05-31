@@ -1,7 +1,6 @@
 ﻿=== Simple Facebook Plugin ===
 
 Contributors: fornyhucker
-Donate link: http://topdevs.net/?donate=true
 Tags: social, social media, facebook, facebook like box, like box, widget, shortcode, template tag
 Requires at least: 2.8
 Tested up to: 3.5.1

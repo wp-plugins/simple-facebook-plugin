@@ -5,7 +5,7 @@ Plugin URI: http://plugins.topdevs.net/simple-facebook-plugin
 Description: Allows you to integrate Facebook Like Box into your WordPress Site.
 Version: 1.2.1
 Author: Ilya K.
-Author URI: http://plugins.topdevs.net
+Author URI: http://topdevs.net
 License: GPLv2 or later
 */
 
