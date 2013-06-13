@@ -5,6 +5,7 @@
 		if ( is_string( $header ) ) $header = ( $header == 'true') ? true : false;
 	?>
 	<!-- SFPlugin by TopDevs -->
+	<div id="fb-root"></div>
 	<script>
 		(function(d){
 			var js, id = 'facebook-jssdk';
@@ -16,17 +17,17 @@
 			d.getElementsByTagName('head')[0].appendChild(js);
 		}(document));
 	</script>
-	
-	<!-- HTML5 Like Box Code START -->
-	<div class="sfp-container"<?php if ( !$border ) { ?> style="width: <?php echo $width - 2; ?>px;	height: <?php echo $height - 2; ?>px; overflow: hidden;" <?php } ?>>
-		<div class="fb-like-box"<?php if ( !$border ) { ?> style="margin: -1px 0px 0px -1px;"  <?php } ?>
+	<!-- Like Box Code START -->
+	<div class="sfp-container">
+		<div class="fb-like-box"
 			data-href="<?php echo $url; ?>"
 			data-width="<?php echo $width; ?>"
 			data-height="<?php echo $height; ?>"
 			data-colorscheme="<?php echo $colorscheme; ?>"
-			data-show-faces="<?php echo ( $faces ) ? 'true' : 'false'; ?>" 
+			data-show-faces="<?php echo ( $faces ) ? 'true' : 'false'; ?>"
+			data-show-border="<?php echo ( $border ) ? 'true' : 'false'; ?>"
 			data-stream="<?php echo ( $stream ) ? 'true' : 'false' ;?>" 
 			data-header="<?php echo ( $header ) ? 'true' : 'false' ;?>">
 		</div>
 	</div>
-	<!-- HTML5 Like Box Code END -->
+	<!-- Like Box Code END -->
