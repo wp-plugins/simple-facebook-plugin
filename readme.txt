@@ -3,7 +3,7 @@
 Contributors: fornyhucker
 Tags: social, media, facebook, like box, widget, shortcode, template tag, sidebar
 Requires at least: 2.8
-Tested up to: 3.5.1
+Tested up to: 3.8
 Stable tag: trunk
 License: GPLv2 or later
 
