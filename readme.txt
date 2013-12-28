@@ -25,7 +25,7 @@ Simple Facebook Plugin enables Facebook Page owners to attract and gain Likes fr
 
 Please visit [Plugin Home Page](http://plugins.topdevs.net/simple-facebook-plugin/ "Simple Facebook Plugin Home Page") for more info and examples.
 
-Visit our [CodeCanyon Portfolio](http://codecanyon.net/user/topdevs/portfolio?ref=topdevs "Our CodeCanyon Portfolio") to see more awesome plugins we made.
+Visit our CodeCanyon [Portfolio](http://codecanyon.net/user/topdevs/portfolio?ref=topdevs "Our CodeCanyon Portfolio") to see more awesome plugins we made.
 
 **Supported languages**
 
