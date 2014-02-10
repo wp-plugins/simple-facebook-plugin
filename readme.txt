@@ -11,6 +11,9 @@ Allows you to integrate Facebook Like Box into your WordPress Site using Widgets
 
 == Description ==
 
+
+= Description =
+
 Simple Facebook Plugin enables Facebook Page owners to attract and gain Likes from their own WordPress blogs. The **Like Box** enables users to:
 
 * See how many users already like this Page, and which of their friends like it too
@@ -19,11 +22,11 @@ Simple Facebook Plugin enables Facebook Page owners to attract and gain Likes fr
 
 You can easily integrate Like Box using WordPress Widgets and Shortcodes.
 
-=== Add-ons ===
+= Add-ons =
 
 Starting version 1.3 Simple Facebook Plugin is add-on ready. Visit our first [Responsive Like Box Add-on](http://plugins.topdevs.net/simple-facebook-plugin/responsive-like-box-addon/ "Visit Responsive Like Box Page") page to learn more.
 
-=== More === 
+= More =
 
 Please visit [Plugin Home Page](http://plugins.topdevs.net/simple-facebook-plugin/ "Simple Facebook Plugin Home Page") for more info and examples.
 
