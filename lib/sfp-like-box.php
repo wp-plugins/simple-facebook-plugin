@@ -31,11 +31,16 @@ class SFPLikeBoxWidget extends WP_Widget {
 	function widget( $args, $instance ) {
 		
 		global $sfplugin;
-		
+
+		// Add-ons hook
+		$instance = apply_filters( "sfp_before_like_box", $instance, $this, $sfplugin );
+		do_action( "sfp_before_like_box", $args, $instance, $this, $sfplugin );
+
 		// extract user options
 		extract( $args );
 		extract( $instance );
 		
+		// Stnadar WP output
 		echo $before_widget;
 		
 		// check for title
@@ -44,7 +49,11 @@ class SFPLikeBoxWidget extends WP_Widget {
 		
 		// include Like Box view
 		include( $sfplugin->pluginPath . 'views/view-like-box.php' );
+
+		// Add-ons hook
+		do_action("sfp_after_like_box", $args, $instance, $this, $sfplugin );
 		
+		// Stnadar WP output
 		echo $after_widget;
 	}
 
@@ -65,6 +74,9 @@ class SFPLikeBoxWidget extends WP_Widget {
 		$instance['stream']			= isset( $new_instance['stream'] );
 		$instance['header']			= isset( $new_instance['header'] );
 		$instance['border']			= isset( $new_instance['border'] );
+	
+		// Add-ons hook
+		apply_filters( 'sfp_like_box_widget_update', $instance, $new_instance, $old_instance );
 		
 		return $instance;
 	}
@@ -73,8 +85,10 @@ class SFPLikeBoxWidget extends WP_Widget {
 	 * Back-end form
 	 */
 	function form( $instance ) {
+
+		global $sfplugin;
 		
-		extract( array_merge( array(
+		$default = array(
 			// default options
 			'title'			=> 'Our Facebook Page',
 			'url'			=> 'http://www.facebook.com/wordpress',
@@ -86,7 +100,17 @@ class SFPLikeBoxWidget extends WP_Widget {
 			'header'		=> true,
 			'border'		=> true,
 			'local'			=> 'en_US'
-		), $instance ) ); ?>
+		);
+
+		// Add-ons hook
+		//$instance = apply_filters( 'sfp_like_box_form', $instance, $default, $this, $sfplugin );
+
+		extract( array_merge( $default, $instance ) ); ?>
+
+		<?php 
+			// Add-ons hook
+			do_action( "sfp_like_box_widget_form_start", $instance, $this, $sfplugin );
+		?>
 			
 		<p>
 			<label for="<?php echo $this->get_field_id('title'); ?>"><?php _e('Title'); ?></label> 
@@ -107,6 +131,10 @@ class SFPLikeBoxWidget extends WP_Widget {
 				</td><td>
 				<input size="6" id="<?php echo $this->get_field_id('height'); ?>" name="<?php echo $this->get_field_name('height'); ?>" type="text" value="<?php echo $height; ?>" />px
 			</td></tr>
+			<?php 
+				// Add-ons hook
+				do_action( "sfp_like_box_widget_form_after_inputs", $instance, $this, $sfplugin );
+			?>
 			<tr><td>
 				&nbsp;
 			</td></tr>
@@ -139,44 +167,24 @@ class SFPLikeBoxWidget extends WP_Widget {
 				</td><td>
 				<input id="<?php echo $this->get_field_id('border'); ?>" type="checkbox" name="<?php echo $this->get_field_name('border'); ?>" <?php checked(isset($border) ? $border : 0); ?>/> 
 			</td></tr>
+			<?php 
+				// Add-ons hook
+				do_action("sfp_like_box_widget_form_after_checkboxes", $instance, $this, $sfplugin );
+			?>
 		</table>
 		<br/>
 		<p>
 			<label for="<?php echo $this->get_field_id('local'); ?>"><?php _e('Language'); ?></label> 
 			<select name="<?php echo $this->get_field_name('local'); ?>">
-				<option <?php selected(( $local == 'cs_CZ') ? 1 : 0);?> value="cs_CZ" >Czech</option>
-				<option <?php selected(( $local == 'da_DK') ? 1 : 0);?> value="da_DK" >Danish</option>
-				<option <?php selected(( $local == 'nl_NL') ? 1 : 0);?> value="nl_NL" >Dutch</option>
-				<option <?php selected(( $local == 'en_US') ? 1 : 0);?> value="en_US" >English (US)</option>
-				<option <?php selected(( $local == 'en_GB') ? 1 : 0);?> value="en_GB" >English (UK)</option>
-				<option <?php selected(( $local == 'et_EE') ? 1 : 0);?> value="et_EE" >Estonian</option>
-				<option <?php selected(( $local == 'fr_FR') ? 1 : 0);?> value="fr_FR" >French</option>
-				<option <?php selected(( $local == 'de_DE') ? 1 : 0);?> value="de_DE" >German</option>
-				<option <?php selected(( $local == 'it_IT') ? 1 : 0);?> value="it_IT" >Italian</option>
-				<option <?php selected(( $local == 'ja_JP') ? 1 : 0);?> value="ja_JP" >Japanese</option>
-				<option <?php selected(( $local == 'ko_KR') ? 1 : 0);?> value="ko_KR" >Korean</option>
-				<option <?php selected(( $local == 'lv_LV') ? 1 : 0);?> value="lv_LV" >Latvian</option>
-				<option <?php selected(( $local == 'lt_LT') ? 1 : 0);?> value="lt_LT" >Lithuanian</option>
-				<option <?php selected(( $local == 'nb_NO') ? 1 : 0);?> value="nb_NO" >Norwegian (bokmal)</option>
-				<option <?php selected(( $local == 'pl_PL') ? 1 : 0);?> value="pl_PL" >Polish</option>
-				<option <?php selected(( $local == 'pt_PT') ? 1 : 0);?> value="pt_PT" >Portuguese</option>
-				<option <?php selected(( $local == 'ro_RO') ? 1 : 0);?> value="ro_RO" >Romanian</option>
-				<option <?php selected(( $local == 'ru_RU') ? 1 : 0);?> value="ru_RU" >Russian</option>
-				<option <?php selected(( $local == 'es_LA') ? 1 : 0);?> value="es_LA" >Spanish</option>
-				<option <?php selected(( $local == 'es_ES') ? 1 : 0);?> value="es_ES" >Spanish (Spain)</option>
-				<option <?php selected(( $local == 'es_CL') ? 1 : 0);?> value="es_CL" >Spanish (Chile)</option>
-				<option <?php selected(( $local == 'es_CO') ? 1 : 0);?> value="es_CO" >Spanish (Colombia)</option>
-				<option <?php selected(( $local == 'es_MX') ? 1 : 0);?> value="es_MX" >Spanish (Mexico)</option>
-				<option <?php selected(( $local == 'es_VE') ? 1 : 0);?> value="es_VE" >Spanish (Venezuela)</option>
-				<option <?php selected(( $local == 'sv_SE') ? 1 : 0);?> value="sv_SE" >Swedish</option>
-				<option <?php selected(( $local == 'zh_CN') ? 1 : 0);?> value="zh_CN" >Simplified Chinese</option>
-				<option <?php selected(( $local == 'zh_TW') ? 1 : 0);?> value="zh_TW" >Traditional Chinese (Taiwan)</option>
-				<option <?php selected(( $local == 'th_TH') ? 1 : 0);?> value="th_TH" >Thai</option>
-				<option <?php selected(( $local == 'tr_TR') ? 1 : 0);?> value="tr_TR" >Turkish</option>
-				<option <?php selected(( $local == 'uk_UA') ? 1 : 0);?> value="uk_UA" >Ukrainian</option>
-				<option <?php selected(( $local == 'tl_ST') ? 1 : 0);?> value="tl_ST" >Klingon</option>
+			<?php foreach ( $sfplugin->locales as $code => $name ) : ?>
+				<option <?php selected(( $local == $code) ? 1 : 0); ?> value="<?php echo $code; ?>" ><?php echo $name; ?></option>
+			<?php endforeach; ?>
 			</select>
 		</p>
+		<?php 
+			do_action( "sfp_like_box_widget_form_end", $instance, $this, $sfplugin );
+		?>
+
 	<?php }
 	
 } // class SFPLikeBoxWidget
@@ -188,9 +196,14 @@ class SFPLikeBoxWidget extends WP_Widget {
  * @author Ilya K.
  */
 
-function sfp_like_box_shortcode ( $args = array() ) {
+function sfp_like_box_shortcode ( $instance ) {
 
 	global $sfplugin;
+
+	$instance = ( !$instance ) ? array() : $instance;
+
+	// Add-ons hook
+	$instance = apply_filters( "sfp_before_like_box", $instance, $sfplugin );
 
 	extract( array_merge( array(
 			// default options
@@ -203,7 +216,7 @@ function sfp_like_box_shortcode ( $args = array() ) {
 			'header'		=> true,
 			'border'		=> true,
 			'local'			=> 'en_US'
-	), $args ) );
+	), $instance ) );
 
 	ob_start();
 
@@ -221,9 +234,12 @@ function sfp_like_box_shortcode ( $args = array() ) {
 * @author Ilya K.
 */
 
-function sfp_like_box ( $args = array() ) { 
+function sfp_like_box ( $instance = array() ) { 
 	
 	global $sfplugin;
+
+	// Add-ons hook
+	$instance = apply_filters( "sfp_before_like_box", $instance, $sfplugin );
 	
 	extract( array_merge( array(
 		// default options
@@ -236,7 +252,7 @@ function sfp_like_box ( $args = array() ) {
 		'header'		=> true,
 		'border'		=> true,
 		'local'			=> 'en_US'
-	), $args ) );
+	), $instance ) );
 	
 	// include Like Box view
 	include( $sfplugin->pluginPath . 'views/view-like-box.php' );

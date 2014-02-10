@@ -1,21 +1,15 @@
 ﻿=== Simple Facebook Plugin ===
 
 Contributors: fornyhucker
-Tags: social, facebook, fb, fb like, like box, likebox, widget, shortcode, template tag, sidebar
+Tags: social, facebook, fb, fb like, like box, likebox, widget, shortcode, responsive, template tag, sidebar
 Requires at least: 2.8
 Tested up to: 3.8
 Stable tag: trunk
 License: GPLv2 or later
 
-Allows you to integrate Facebook Like Box into your WordPress Site.
+Allows you to integrate Facebook Like Box into your WordPress Site using Widgets or Shortcodes. 
 
 == Description ==
-
-= Whats new in 1.2.1? =
-
-Now you can hide Like Box border, just uncheck 'Show Border' option on widget setting and vuala! (If you are using shortcode or template tag set ‘border‘ parameter to ‘false‘)
-
-= Description =
 
 Simple Facebook Plugin enables Facebook Page owners to attract and gain Likes from their own WordPress blogs. The **Like Box** enables users to:
 
@@ -23,43 +17,17 @@ Simple Facebook Plugin enables Facebook Page owners to attract and gain Likes fr
 * Read recent posts from the Page
 * Like the Page with one click, without needing to visit the Page
 
+You can easily integrate Like Box using WordPress Widgets and Shortcodes.
+
+=== Add-ons ===
+
+Starting version 1.3 Simple Facebook Plugin is add-on ready. Visit our first [Responsive Like Box Add-on](http://plugins.topdevs.net/simple-facebook-plugin/responsive-like-box-addon/ "Visit Responsive Like Box Page") page to learn more.
+
+=== More === 
+
 Please visit [Plugin Home Page](http://plugins.topdevs.net/simple-facebook-plugin/ "Simple Facebook Plugin Home Page") for more info and examples.
 
-Visit our CodeCanyon [Portfolio](http://codecanyon.net/user/topdevs/portfolio?ref=topdevs "Our CodeCanyon Portfolio") to see more awesome plugins we made.
-
-**Supported languages**
-
-* Czech
-* Danish
-* Dutch
-* English (US)
-* English (UK)
-* Estonian
-* French
-* German
-* Italian
-* Japanese
-* Korean
-* Latvian
-* Lithuanian
-* Norwegian (bokmal)
-* Polish
-* Portuguese
-* Romanian
-* Russian
-* Spanish
-* Spanish (Spain)
-* Spanish (Chile)
-* Spanish (Colombia)
-* Spanish (Mexico)
-* Spanish (Venezuela)
-* Swedish
-* Simplified Chinese
-* Traditional Chinese (Taiwan)
-* Thai
-* Turkish
-* Ukrainian
-* Klingon
+Visit our [CodeCanyon Portfolio](http://codecanyon.net/user/topdevs/portfolio?ref=topdevs "Our CodeCanyon Portfolio") to see more awesome plugins we made.
 
 == Installation ==
 **Installation**
@@ -122,6 +90,9 @@ Like Box is only for Fan Pages and **not** for your personal page.
 3. Shortcode inside your post.
 
 == Changelog ==
+
+= 1.3 =
+* Add-on support added
 
 = 1.2.2 =
 * Option to show Like Box with no border changed to native Facebook data-show-border=false;
