@@ -11,7 +11,6 @@ Allows you to integrate Facebook Like Box into your WordPress Site using Widgets
 
 == Description ==
 
-
 = Description =
 
 Simple Facebook Plugin enables Facebook Page owners to attract and gain Likes from their own WordPress blogs. The **Like Box** enables users to:
