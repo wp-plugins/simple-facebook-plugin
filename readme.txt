@@ -7,7 +7,7 @@ Tested up to: 3.8
 Stable tag: trunk
 License: GPLv2 or later
 
-Allows you to integrate Facebook Like Box into your WordPress Site using Widgets or Shortcodes. 
+Allows you to integrate Facebook Like Box into your WordPress site using Widgets or Shortcodes. 
 
 == Description ==
 
@@ -23,13 +23,12 @@ You can easily integrate Like Box using WordPress Widgets and Shortcodes.
 
 = Add-ons =
 
-Starting version 1.3 Simple Facebook Plugin is add-on ready. Visit our first [Responsive Like Box Add-on](http://plugins.topdevs.net/simple-facebook-plugin/responsive-like-box-addon/ "Visit Responsive Like Box Page") page to learn more.
+Starting version 1.3 Simple Facebook Plugin is add-on ready. Visit our first [Responsive Like Box Add-on](http://plugins.topdevs.net/simple-facebook-plugin/responsive-like-box-addon/ "Visit Responsive Like Box Add-on Page") page to learn more.
 
 = More =
 
-Please visit [Plugin Home Page](http://plugins.topdevs.net/simple-facebook-plugin/ "Simple Facebook Plugin Home Page") for more info and examples.
-
-Visit our [CodeCanyon Portfolio](http://codecanyon.net/user/topdevs/portfolio?ref=topdevs "Our CodeCanyon Portfolio") to see more awesome plugins we made.
+Visit [Plugin Home Page](http://plugins.topdevs.net/simple-facebook-plugin/ "Simple Facebook Plugin Home Page") for more info and examples.
+Visit [Our CodeCanyon Portfolio](http://codecanyon.net/user/topdevs/portfolio?ref=topdevs "Our CodeCanyon Portfolio") to see more awesome plugins we made.
 
 == Installation ==
 **Installation**
@@ -42,8 +41,8 @@ Visit our [CodeCanyon Portfolio](http://codecanyon.net/user/topdevs/portfolio?re
 1. In WordPress dashboard, go to **Appearance > Widgets**. 
 1. Drag and Drop **SFP - Like Box** into your sidebar.
 1. Click triangle near **SFP - Like Box** header.
-1. Choose colorscheme, size and other options you like.
 1. Enter your Facebook Page URL (not your personal page URL!).
+1. Choose colorscheme, size and other options you like.
 
 **or**
 
@@ -57,12 +56,13 @@ Use `[sfp-like-box]` shortcode inside your post or page. This shortcode support 
 * faces – *true* or *false*
 * stream - *true* or *false*
 * header - *true* or *false*
+* border - *true* or *false*
 * local - valid language code (e.g. *en_US* or *es_MX*) see [.xml file](http://www.facebook.com/translations/FacebookLocales.xml "Facebook locales XML") with all Facebook locales
 
 
 If you want Like Box *220 pixels width*, *dark color scheme* and *showing stream* you need to use it next way:
 
-`[sfp-like-box width=220 colorscheme=dark stream=true]`
+`[sfp-like-box width=220 colorscheme=dark stream=true url=http://www.facebook.com/yourPageName]`
 
 **or**
 

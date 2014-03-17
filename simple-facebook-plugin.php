@@ -3,13 +3,13 @@
 Plugin Name: Simple Facebook Plugin
 Plugin URI: http://plugins.topdevs.net/simple-facebook-plugin
 Description: Allows you to integrate Facebook Like Box into your WordPress Site.
-Version: 1.3
+Version: 1.3.1
 Author: topdevs
 Author URI: http://codecanyon.net/user/topdevs/portfolio?ref=topdevs
 License: GPLv2 or later
 */
 
-define( SFP_VERSION, '1.3' );
+define( SFP_VERSION, '1.3.1' );
 
 /**
 * Main SF Plugin Class
@@ -74,14 +74,15 @@ if ( !class_exists( 'SFPlugin' ) ) {
 			//add_action( 'wp_footer',		array( $this, 'addJavaScriptSDK') );
 			add_action( 'admin_init', 		array( $this, 'saveOptions' ) );
 			add_action( 'admin_init', 		array( $this, 'ignoreNotices' ) );
-
+			add_action( 'admin_enqueue_scripts',	array( $this, 'enqueueScriptsAdmin') );
+			add_action( "sfp_like_box_widget_form_after_checkboxes", array( $this, "fakeCheckbox" ) );
 
 			// Add settings link on Plugins page
 			$plugin = "simple-facebook-plugin/simple-facebook-plugin.php";
 			//add_filter( "plugin_action_links_$plugin", array( $this, 'pluginSettingsLink') );
 
 			// Allow addons add actions
-			do_action('sfp_add_actions');
+			do_action( 'sfp_add_actions', $this );
 		}
 		
 		/**
@@ -216,6 +217,23 @@ if ( !class_exists( 'SFPlugin' ) ) {
 		}
 
 		/**
+		 * Load styles for dashboard
+		 *
+		 * @since 1.3.1
+		 */
+
+		static function enqueueScriptsAdmin() {
+
+			// add scripts
+			wp_register_script( 'gumroad', 'https://gumroad.com/js/gumroad.js' );
+			wp_enqueue_script( 'gumroad' );
+			
+			// add custom css
+			wp_register_style( 'sfp-admin-style', plugin_dir_url(__FILE__) . '/lib/css/sfp-admin-style.css' );
+			wp_enqueue_style( 'sfp-admin-style' );
+		}
+
+		/**
 		 * Load Facebook JavaScript SDK
 		 *
 		 * @since 1.3
@@ -281,11 +299,11 @@ if ( !class_exists( 'SFPlugin' ) ) {
 			$user_id = $current_user->ID;
 
 			/* Check that the user hasn't already clicked to ignore the message */
-			if ( !get_user_meta( $user_id, 'sfp_ignore_notice_1') ) {
+			if ( ! get_user_meta( $user_id, 'sfp_ignore_notice_1') ) {
 
 				echo '<div class="updated"><p>';
 
-				printf( __('Thanks for using <strong>Simple Facebook Plugin</strong>. Use our Responsive Add-on to make it look nice on all devices. <a class="button" href="http://plugins.topdevs.net/simple-facebook-plugin/responsive-like-box-addon/">Get Responsive Add-on</a> | <a class="button" href="%1$s">Don\'t show this</a>'), '?sfp_ignore_1=0');
+				printf( __('Thanks for using <strong>Simple Facebook Plugin</strong>. Use our Responsive Add-on to make it look nice on all devices. <a class="button" href="https://gum.co/zrJx">Get Add-on Now</a> or <a href="http://plugins.topdevs.net/simple-facebook-plugin/responsive-like-box-addon/">Visit Add-on Page</a> | <a href="%1$s">Don\'t show this</a>'), '?sfp_ignore_1=0');
 
 				echo "</p></div>";
 
@@ -369,6 +387,35 @@ if ( !class_exists( 'SFPlugin' ) ) {
 
 				$this->savePluginOptions( $options );
 			}
+		}
+
+		/**
+		 * Add disabled 'Responsive' checkbox
+		 *
+		 * @since 1.3.1
+		 */
+
+		public function fakeCheckbox () { 
+
+		if ( is_plugin_active( 'sfp-responsive-like-box/sfp-responsive-like-box.php' ) ) 
+			return;
+		?>
+			<tr><td>
+				<label><?php _e('Responsive'); ?></label> 
+				</td><td>
+				<input type="checkbox" disabled="disabled"/>
+				<span class="sfp-icon">
+					<span class="sfp-tooltip-wrap">
+						<span class="sfp-tooltip">
+							Available with "Responsive Like Box Add-on" installed and activated.
+							<span class="sfp-buttons">
+								<a class="button" href="https://gum.co/zrJx">Get Add-on Now</a> or <a href="http://plugins.topdevs.net/simple-facebook-plugin/responsive-like-box-addon/">Learn more</a>
+							</span>
+						</span>
+					</span>
+				</span
+			</td></tr>
+			<?php 
 		}
 		
 	} // end SFPlugin class
