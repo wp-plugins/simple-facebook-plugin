@@ -303,7 +303,7 @@ if ( !class_exists( 'SFPlugin' ) ) {
 
 				echo '<div class="updated"><p>';
 
-				printf( __('Thanks for using <strong>Simple Facebook Plugin</strong>. Use our Responsive Add-on to make it look nice on all devices. <a class="button" href="https://gum.co/zrJx">Get Add-on Now</a> or <a href="http://plugins.topdevs.net/simple-facebook-plugin/responsive-like-box-addon/">Visit Add-on Page</a> | <a href="%1$s">Don\'t show this</a>'), '?sfp_ignore_1=0');
+				printf( __('Thanks for using <strong>Simple Facebook Plugin</strong>. Use our Responsive Add-on to make it look nice on all devices. <a class="button" href="https://gum.co/zrJx">Buy Add-on Now</a> or <a href="http://plugins.topdevs.net/simple-facebook-plugin/responsive-like-box-addon/">Visit Add-on Page</a> | <a href="%1$s">Don\'t show this</a>'), '?sfp_ignore_1=0');
 
 				echo "</p></div>";
 
@@ -409,7 +409,7 @@ if ( !class_exists( 'SFPlugin' ) ) {
 						<span class="sfp-tooltip">
 							Available with "Responsive Like Box Add-on" installed and activated.
 							<span class="sfp-buttons">
-								<a class="button" href="https://gum.co/zrJx">Get Add-on Now</a> or <a href="http://plugins.topdevs.net/simple-facebook-plugin/responsive-like-box-addon/">Learn more</a>
+								<a class="button" href="https://gum.co/zrJx">Buy Add-on Now</a> or <a href="http://plugins.topdevs.net/simple-facebook-plugin/responsive-like-box-addon/">Learn more</a>
 							</span>
 						</span>
 					</span>

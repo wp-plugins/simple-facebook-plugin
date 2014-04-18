@@ -3,7 +3,7 @@
 Contributors: topdevs, fornyhucker
 Tags: social, facebook, fb, fb like, like box, likebox, widget, shortcode, responsive, template tag, sidebar
 Requires at least: 2.8
-Tested up to: 3.8
+Tested up to: 3.9
 Stable tag: trunk
 License: GPLv2 or later
 
