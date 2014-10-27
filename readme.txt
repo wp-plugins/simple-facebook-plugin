@@ -3,7 +3,7 @@
 Contributors: topdevs, fornyhucker
 Tags: social, facebook, fb, fb like, like box, likebox, widget, shortcode, responsive, template tag, sidebar
 Requires at least: 2.8
-Tested up to: 3.9.1
+Tested up to: 4.0
 Stable tag: trunk
 License: GPLv2 or later
 
@@ -13,7 +13,7 @@ Allows you to integrate Facebook Like Box into your WordPress site using Widgets
 
 = Description =
 
-Simple Facebook Plugin enables Facebook Page owners to attract and gain Likes from their own WordPress blogs. The **Like Box** enables users to:
+Simple Facebook Plugin enables Facebook Page admins to promote their Pages and embed a simple feed of content from a Page into any WordPress blog. The **Like Box** enables users to:
 
 * See how many users already like this Page, and which of their friends like it too
 * Read recent posts from the Page
@@ -27,8 +27,9 @@ Starting version 1.3 Simple Facebook Plugin is add-on ready. Visit our first [Re
 
 = More =
 
-Visit [Plugin Home Page](http://plugins.topdevs.net/simple-facebook-plugin/ "Simple Facebook Plugin Home Page") for more info and examples.
-Visit [Our CodeCanyon Portfolio](http://codecanyon.net/user/topdevs/portfolio?ref=topdevs "Our CodeCanyon Portfolio") to see more awesome plugins we made.
+Visit [Plugin Page](http://plugins.topdevs.net/simple-facebook-plugin/ "See 'Simple Facebook Plugin' Page") for more info and examples.
+
+Visit our [CodeCanyon Portfolio](http://codecanyon.net/user/topdevs/portfolio?ref=topdevs "Our Plugins on CodeCanyon") or our [Plugins Site](http://plugins.topdevs.net/ "See all our plugins") to see more awesome plugins we made.
 
 == Installation ==
 **Installation**
