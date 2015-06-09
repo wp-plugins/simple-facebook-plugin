@@ -7,7 +7,7 @@ Tested up to: 4.2.2
 Stable tag: trunk
 License: GPLv2 or later
 
-Lets you easily embed and promote any Facebook Page on your website. Just like on Facebook, your visitors can like and share the Page without having to leave your site.
+Lets you easily embed and promote any Facebook Page on your website. Your visitors can like and share the Page without having to leave your site.
 
 == Description ==
 
