@@ -1,7 +1,7 @@
 ﻿=== Simple Facebook Plugin ===
 
 Contributors: topdevs, fornyhucker
-Tags: social, facebook, fb, fb like, like box, likebox, page plugin, widget, shortcode, responsive, template tag, sidebar
+Tags: social, facebook, fb, fb like, like box, likebox, page plugin, widget, shortcode, responsive, template tag, sidebar, fb page plugin
 Requires at least: 2.8
 Tested up to: 4.2.2
 Stable tag: trunk
