@@ -65,6 +65,7 @@ class SFPPagePluginWidget extends WP_Widget {
 		
 		$instance = $old_instance;
 		// save new options
+		$instance['title'] 			= strip_tags( $new_instance['title'] );
 		$instance['url'] 			= strip_tags( $new_instance['url'] );
 		$instance['width']			= strip_tags( $new_instance['width'] );
 		$instance['height']			= strip_tags( $new_instance['height'] );
@@ -89,6 +90,7 @@ class SFPPagePluginWidget extends WP_Widget {
 		
 		$default = array(
 			// default options
+			'title' 		=> 'Our Facebook Page',
 			'url'			=> 'http://www.facebook.com/topdevs.net',
 			'width'			=> '',
 			'height'		=> '',
@@ -108,7 +110,10 @@ class SFPPagePluginWidget extends WP_Widget {
 			// Add-ons hook
 			do_action( "sfp_page_plugin_widget_form_start", $instance, $this, $sfplugin );
 		?>
-			
+		<p>
+			<label for="<?php echo $this->get_field_id('title'); ?>"><?php _e('Title'); ?></label> 
+			<input class="widefat" id="<?php echo $this->get_field_id('title'); ?>" name="<?php echo $this->get_field_name('title'); ?>" type="text" value="<?php echo $title; ?>" />
+		</p>
 		<p>
 			<label for="<?php echo $this->get_field_id('url'); ?>"><?php _e('Facebook Page URL:'); ?></label> 
 			<input class="widefat" id="<?php echo $this->get_field_id('url'); ?>" name="<?php echo $this->get_field_name('url'); ?>" type="text" value="<?php echo $url; ?>" />
