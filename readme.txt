@@ -1,19 +1,19 @@
 ﻿=== Simple Facebook Plugin ===
 
 Contributors: topdevs, fornyhucker
-Tags: social, facebook, fb, fb like, like box, likebox, widget, shortcode, responsive, template tag, sidebar
+Tags: social, facebook, fb, fb like, like box, likebox, page plugin, widget, shortcode, responsive, template tag, sidebar
 Requires at least: 2.8
-Tested up to: 4.0
+Tested up to: 4.2.2
 Stable tag: trunk
 License: GPLv2 or later
 
-Allows you to integrate Facebook Like Box into your WordPress site using Widgets or Shortcodes. 
+Lets you easily embed and promote any Facebook Page on your website. Just like on Facebook, your visitors can like and share the Page without having to leave your site.
 
 == Description ==
 
 = Description =
 
-Simple Facebook Plugin enables Facebook Page admins to promote their Pages and embed a simple feed of content from a Page into any WordPress blog. The **Like Box** enables users to:
+Simple Facebook Plugin enables Facebook Page admins to promote their Pages and embed a simple feed of content from a Page into any WordPress blog. The Facebook **Page Plugin** enables users to:
 
 * See how many users already like this Page, and which of their friends like it too
 * Read recent posts from the Page
@@ -21,15 +21,12 @@ Simple Facebook Plugin enables Facebook Page admins to promote their Pages and e
 
 You can easily integrate Like Box using WordPress Widgets and Shortcodes.
 
-= Add-ons =
-
-Starting version 1.3 Simple Facebook Plugin is add-on ready. Visit our first [Responsive Like Box Add-on](http://plugins.topdevs.net/simple-facebook-plugin/responsive-like-box-addon/ "Visit Responsive Like Box Add-on Page") page to learn more.
 
 = More =
 
-Visit [Plugin Page](http://plugins.topdevs.net/simple-facebook-plugin/ "See 'Simple Facebook Plugin' Page") for more info and examples.
+Visit [Plugin Page](http://topdevs.net/simple-facebook-plugin/ "See 'Simple Facebook Plugin' Page") for more info and examples.
 
-Visit our [CodeCanyon Portfolio](http://codecanyon.net/user/topdevs/portfolio?ref=topdevs "Our Plugins on CodeCanyon") or our [Plugins Site](http://plugins.topdevs.net/ "See all our plugins") to see more awesome plugins we made.
+Visit our [CodeCanyon Portfolio](http://codecanyon.net/user/topdevs/portfolio?ref=topdevs "Our Plugins on CodeCanyon") or our [Web Site](http://topdevs.net/ "See all plugins on our site") to see more awesome plugins we made.
 
 == Installation ==
 **Installation**
@@ -40,59 +37,59 @@ Visit our [CodeCanyon Portfolio](http://codecanyon.net/user/topdevs/portfolio?re
 **Customization**
 
 1. In WordPress dashboard, go to **Appearance > Widgets**. 
-1. Drag and Drop **SFP - Like Box** into your sidebar.
-1. Click triangle near **SFP - Like Box** header.
-1. Enter your Facebook Page URL (not your personal page URL!).
-1. Choose colorscheme, size and other options you like.
+1. Drag and Drop **SFP - Facebook Page Plugin** into your sidebar.
+1. Click triangle near **SFP - Facebook Page Plugin** header.
+1. Enter your Facebook Page URL (not your profile URL).
+1. Choose width, height and other options you like.
 
 **or**
 
-Use `[sfp-like-box]` shortcode inside your post or page. This shortcode support all default parametrs:
+Use `[sfp-page-plugin]` shortcode inside your post or page. This shortcode support all default parametrs:
 
 
 * url - any Fan Page URL (not your personal page!)
-* width - any number (e.g 250)
-* height - any number (e.g 300)
-* colorscheme - *light* or *dark*
-* faces – *true* or *false*
-* stream - *true* or *false*
-* header - *true* or *false*
-* border - *true* or *false*
-* local - valid language code (e.g. *en_US* or *es_MX*) see [.xml file](http://www.facebook.com/translations/FacebookLocales.xml "Facebook locales XML") with all Facebook locales
+* width - number (min 280, max 500)
+* height - number
+* hide_cover - *true* or *false*
+* show_facepile - *true* or *false*
+* show_posts - *true* or *false*
+* locale - valid language code (e.g. *en_US* or *es_MX*) see [.xml file](http://www.facebook.com/translations/FacebookLocales.xml "Facebook locales XML") with all Facebook locales
 
 
-If you want Like Box *220 pixels width*, *dark color scheme* and *showing stream* you need to use it next way:
+If you want Page Plugin *320 pixels width* and *showing posts* you need to use it next way:
 
-`[sfp-like-box width=220 colorscheme=dark stream=true url=http://www.facebook.com/yourPageName]`
+`[sfp-page-plugin width=320 show_posts=true url=http://www.facebook.com/yourPageName]`
 
 **or**
 
-Use `sfp_like_box()` template tag in your theme files.
+Use `sfp_page_plugin()` template tag in your theme files.
 
-`<?php if ( function_exists("sfp_like_box") ) {
+`<?php if ( function_exists("sfp_page_plugin") ) {
 	$args = array(
-		'url'			=> 'http://www.facebook.com/wordpress',
-		'width'		=> '292',
-		'faces'		=> false,
-		'header'		=> false,
-		'local'		=> 'en_US'
+		'url'			=> 'http://www.facebook.com/topdevs.net',
+		'width'		=> '300',
+		'hide_cover'=> true,
+		'locale'		=> 'en_US'
 	);
-	sfp_like_box( $args );
+	sfp_page_plugin( $args );
 } ?>`
 
 == Frequently Asked Questions ==
 
-= I can get a box to display on the blog, but it contains the message “There was an error fetching the like box for the specified page”. What am I doing wrong? =
+= I see the message “Error: Not a valid Facebook Page url.”. What am I doing wrong? =
 
-Like Box is only for Fan Pages and **not** for your personal page.
+Page Plugin is only for Pages and **not** for Profiles, Events and Groups.
 
 == Screenshots ==
 
 1. Widget in the dashboard.
-2. Widget on your site.
-3. Shortcode inside your post.
+2. Simple Widget on your website.
+3. Widget with posts on your website.
 
 == Changelog ==
+
+= 1.4 =
+* Deprecated "Like Box" replaced with new Facebook "Page Plugin"
 
 = 1.3 =
 * Add-on support added

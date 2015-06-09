@@ -2,14 +2,14 @@
 /*
 Plugin Name: Simple Facebook Plugin
 Plugin URI: http://plugins.topdevs.net/simple-facebook-plugin
-Description: Allows you to integrate Facebook Like Box into your WordPress Site.
-Version: 1.3.2
-Author: topdevs
+Description: Allows you to integrate Facebook "Page Plugin" into your WordPress Site.
+Version: 1.4
+Author: topdevs.net
 Author URI: http://codecanyon.net/user/topdevs/portfolio?ref=topdevs
 License: GPLv2 or later
 */
 
-define( SFP_VERSION, '1.3.2' );
+define( "SFP_VERSION", '1.4' );
 
 /**
 * Main SF Plugin Class
@@ -58,6 +58,7 @@ if ( !class_exists( 'SFPlugin' ) ) {
 		protected function loadFiles() {
 			// Include social plugins files
 			require_once( $this->pluginPath . 'lib/sfp-like-box.php' );
+			require_once( $this->pluginPath . 'lib/sfp-page-plugin.php' );
 
 			// Allow addons load files
 			do_action('sfp_load_files');
@@ -75,7 +76,7 @@ if ( !class_exists( 'SFPlugin' ) ) {
 			add_action( 'admin_init', 		array( $this, 'saveOptions' ) );
 			add_action( 'admin_init', 		array( $this, 'ignoreNotices' ) );
 			add_action( 'admin_enqueue_scripts',	array( $this, 'enqueueScriptsAdmin') );
-			add_action( "sfp_like_box_widget_form_after_checkboxes", array( $this, "fakeCheckbox" ) );
+			//add_action( "sfp_like_box_widget_form_after_checkboxes", array( $this, "fakeCheckbox" ) );
 
 			// Add settings link on Plugins page
 			$plugin = "simple-facebook-plugin/simple-facebook-plugin.php";
@@ -89,8 +90,9 @@ if ( !class_exists( 'SFPlugin' ) ) {
 		* Register all widgets
 		*/
 		public function addWidgets() {
-				
-			register_widget('SFPLikeBoxWidget');
+			
+			register_widget('SFPLikeBoxWidget'); // deprecated
+			register_widget('SFPPagePluginWidget');
 		
 			// Allow addons add widgets
 			do_action('sfp_add_widgets');
@@ -102,6 +104,7 @@ if ( !class_exists( 'SFPlugin' ) ) {
 		public function addShortcodes() {
 		
 			add_shortcode('sfp-like-box', 'sfp_like_box_shortcode');
+			add_shortcode('sfp-page-plugin', 'sfp_page_plugin_shortcode');
 			
 			// Allow addons add shortcodes
 			do_action('sfp_add_shortcodes');
@@ -299,11 +302,11 @@ if ( !class_exists( 'SFPlugin' ) ) {
 			$user_id = $current_user->ID;
 
 			/* Check that the user hasn't already clicked to ignore the message */
-			if ( ! get_user_meta( $user_id, 'sfp_ignore_notice_1') ) {
+			if ( ! get_user_meta( $user_id, 'sfp_ignore_notice_2') ) {
 
 				echo '<div class="updated"><p>';
 
-				printf( __('Thanks for using <strong>Simple Facebook Plugin</strong>. Use our Responsive Add-on to make it look nice on all devices. <a class="button" href="https://gum.co/zrJx">Buy Add-on Now</a> or <a href="http://plugins.topdevs.net/simple-facebook-plugin/responsive-like-box-addon/">Visit Add-on Page</a> | <a href="%1$s">Don\'t show this</a>'), '?sfp_ignore_1=0');
+				printf( __('Thanks for using our <strong>Simple Facebook Plugin</strong>! We have some other great WordPress plugins <a href="http://codecanyon.net/user/topdevs/portfolio?ref=topdevs">View Portfolio</a> | <a href="%1$s">Hide this</a>'), '?sfp_ignore_2=0');
 
 				echo "</p></div>";
 
@@ -316,8 +319,8 @@ if ( !class_exists( 'SFPlugin' ) ) {
 			$user_id = $current_user->ID;
 			
 			/* If user clicks to ignore the notice, add that to their user meta */
-			if ( isset( $_GET['sfp_ignore_1'] ) && '0' == $_GET['sfp_ignore_1'] ) {
-				add_user_meta( $user_id, 'sfp_ignore_notice_1', 'true', true);
+			if ( isset( $_GET['sfp_ignore_2'] ) && '0' == $_GET['sfp_ignore_2'] ) {
+				add_user_meta( $user_id, 'sfp_ignore_notice_2', 'true', true);
 			}
 		}
 

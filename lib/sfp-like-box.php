@@ -21,8 +21,8 @@ class SFPLikeBoxWidget extends WP_Widget {
 	 * Register widget with WordPress
 	 */
 	function SFPLikeBoxWidget() {
-		$widget_ops = array( 'description' => 'Display Facebook Like Box' );
-		parent::WP_Widget( 'facebookwidget', $name = 'SFP - Like Box',  $widget_ops);
+		$widget_ops = array( 'description' => 'Is deprecated by Facebook, please use the new Page Plugin instead. Like Box will automatically fall back to the Page Plugin by June 23rd 2015.' );
+		parent::WP_Widget( 'facebookwidget', $name = 'SFP - Like Box. Deprecated!',  $widget_ops);
 	}
 
 	/**
@@ -188,6 +188,7 @@ class SFPLikeBoxWidget extends WP_Widget {
 	<?php }
 	
 } // class SFPLikeBoxWidget
+
 
 /**
  * Add Like Box 'Shortcode'
